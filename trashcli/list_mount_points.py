@@ -43,7 +43,7 @@ def os_mount_points():
     ]
 
     # Append fstypes of physical devices to list
-    fstypes += set([p.fstype for p in psutil.disk_partitions()])
+    fstypes += set([p.fstype for p in psutil.disk_partitions(all=True)])
 
     partitions = Partitions(fstypes)
 
